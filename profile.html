@@ -47,34 +47,43 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="main-image">
-        <div class="header">
-            <h1>Motherly</h1>
-        </div>
-    </div>
-    <div class="row main">
-        <div class="col-md-6">
-            <h3 class="momma-headline">Hey Momma, Sign in to your account below!</h3>
-            <form>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
+    <div id="profile-page">
+        <div class="row">
+            <div class="col-xs-6">
+                <form class="profile-input">
+                    <label for="exampleInputFile">Upload profile image</label>
+                    <input type="file" id="exampleInputFile">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Location</label>
+                        <input type="location" class="form-control" id="exampleInputPassword1" placeholder="Location">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="10" placeholder="About me section"></textarea>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Check me out
+                        </label>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-6">
+                <div class="panel panel-default profile-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">My Profile</h3>
+                    </div>
+                    <div class="panel-body">
+                        Profile content
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-        </div>
-        <div class="col-md-6 mommy-hide">
-            <div id="mommy-quote">
-                <img class="mommy" src="https://s-media-cache-ak0.pinimg.com/originals/b3/c4/24/b3c424b9c13f79aa0d3273f553e1d32d.jpg" alt="Avatar">
-                <h3><span>Alex Hoglen.</span> Momma of Kennedy.</h3>
-                <p>"Being a new mom has been the most challenging experience of my life, having the support system that Motherly has given me has really helped make this part of my life something I will cherish forever! The ease of the app and ability to connect with other users is something you won't find anywhere else!"</p>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="bootstrap.min.js"></script>
 </body>
 
 </html>

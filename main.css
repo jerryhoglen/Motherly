@@ -15,6 +15,14 @@ body p {
     font-weight: 200;
 }
 
+/*********************************************************
+
+
+				MAIN PAGE
+
+
+*********************************************************/
+
 
 .main-image {
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/mommy.jpg) no-repeat center center fixed;
@@ -69,6 +77,40 @@ form {
 /*********************************************************
 
 
+				PROFILE PAGE
+
+
+*********************************************************/
+
+#profile-page {
+background-image: -webkit-linear-gradient(bottom, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+height: 1000px;
+}
+
+.profile-input {
+	margin-top: 25%;
+}
+
+.profile-panel {
+	margin-top: 25%;
+	width: 80%;
+}
+
+.panel-heading {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/*********************************************************
+
+
 				Responsiveness
 
 
@@ -79,10 +121,10 @@ form {
 
 @media only screen and (min-width: 768px) {
     .header {
-        height: 450px;
+        height: 400px;
     }
     .header h1 {
-        padding-top: 18%;
+        padding-top: 15%;
     }
     .mommy-hide {
         display: block;
