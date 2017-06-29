@@ -16,18 +16,42 @@ body p {
 }
 
 
+.main-image {
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/mommy.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header {
+    height: 375px;
+}
+
+.header h1 {
+    text-align: center;
+    padding-top: 35%;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 7em;
+    color: #fff;
+}
 
 .momma-headline {
-	width: 80%;
-	margin-top: 10%;
-	margin-left: 10%;
-	text-align: center;
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+    text-align: center;
 }
 
 form {
     width: 50%;
     margin-top: 5%;
     margin-left: 25%;
+}
+
+.mommy-hide {
+    display: none;
 }
 
 #mommy-quote {
@@ -39,4 +63,28 @@ form {
     height: 100%;
     width: 50%;
     margin-top: 2%;
+}
+
+
+/*********************************************************
+
+
+				Responsiveness
+
+
+*********************************************************/
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+    .header {
+        height: 450px;
+    }
+    .header h1 {
+        padding-top: 18%;
+    }
+    .mommy-hide {
+        display: block;
+    }
 }
