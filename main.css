@@ -1,0 +1,42 @@
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: oxtail, serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+body p {
+    font-family: lato, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+
+
+
+.momma-headline {
+	width: 80%;
+	margin-top: 10%;
+	margin-left: 10%;
+	text-align: center;
+}
+
+form {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+
+#mommy-quote {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.mommy {
+    height: 100%;
+    width: 50%;
+    margin-top: 2%;
+}
