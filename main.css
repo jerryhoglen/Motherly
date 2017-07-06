@@ -5,7 +5,7 @@ h4,
 h5,
 h6 {
     font-family: oxtail, serif;
-    font-style: normal;
+    font-style: italic;
     font-weight: 400;
 }
 
@@ -15,6 +15,7 @@ body p {
     font-weight: 200;
 }
 
+
 /*********************************************************
 
 
@@ -22,7 +23,6 @@ body p {
 
 
 *********************************************************/
-
 
 .main-image {
     background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/mommy.jpg) no-repeat center center fixed;
@@ -83,29 +83,60 @@ form {
 *********************************************************/
 
 #profile-page {
-background-image: -webkit-linear-gradient(bottom, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
-height: 1000px;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    height: 1000px;
 }
 
 .profile-input {
-	margin-top: 25%;
+    margin-top: 25%;
 }
 
 .profile-panel {
-	margin-top: 25%;
-	width: 80%;
+    margin-top: 25%;
+    width: 80%;
 }
 
 .panel-heading {
-	text-align: center;
+    text-align: center;
 }
 
 
+/*********************************************************
 
 
+				ASK A MOMMA PAGE
 
 
+*********************************************************/
 
+#ask-page {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    height: 1000px;
+}
+
+.ask-heading {
+	text-align: center;
+	padding-top: 5%;
+	font-style: italic;
+}
+
+.ask {
+	text-align: center;
+	width: 75%;
+	margin-left: 12.5%;
+	font-size: 1.5em;
+}
+
+.accordion-main {
+	padding-top: 3%;
+	width: 95%;
+	margin-left: 2.5%;
+}
+
+.ask-btn {
+	margin-left: 44%;
+	background-color: #lightgrey;
+}
 
 
 /*********************************************************
