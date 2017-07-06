@@ -100,6 +100,10 @@ form {
     text-align: center;
 }
 
+.profile-section {
+	margin-left: 10%;
+}
+
 
 /*********************************************************
 
@@ -116,7 +120,7 @@ form {
 
 .ask-heading {
 	text-align: center;
-	padding-top: 5%;
+	padding-top: 10%;
 	font-style: italic;
 }
 
@@ -134,7 +138,7 @@ form {
 }
 
 .ask-btn {
-	margin-left: 44%;
+	margin-left: 29%;
 	background-color: #lightgrey;
 }
 
