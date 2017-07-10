@@ -58,6 +58,10 @@ form {
     margin-left: 25%;
 }
 
+.member-link {
+	text-align: center;
+}
+
 .mommy-hide {
     display: none;
 }
@@ -138,8 +142,14 @@ form {
 }
 
 .ask-btn {
-	margin-left: 29%;
+	margin: 0 auto;
+	display: block;
 	background-color: #lightgrey;
+}
+
+.reply-btn {
+	margin-left: 5%;
+	margin-bottom: 2%;
 }
 
 
