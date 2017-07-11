@@ -19,10 +19,11 @@
         });
     } catch (e) {}
     </script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav id="hide-nav" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -37,9 +38,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                	<li><a href="profile.html">Our Profile</a></li>
+                    <li><a href="profile.html">Our Profile</a></li>
                     <li><a href="ask.html">Ask a Momma</a></li>
-                    <li><a href="#">Around Us</a></li>
+                    <li><a href="aroundme.html">Around Us</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -55,16 +56,15 @@
     <div class="row main">
         <div class="col-md-6">
             <h3 class="momma-headline">Hey Momma, Sign in to your account below!</h3>
-            <form>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <a href="profile.html" class="member-link"><h5>Not a member? Click here to sign up!</h5></a>
+            <div class="form-group">
+                <input type="email" id="txtEmail" class="form-control" placeholder="Log in or sign up with email address">
+                <br>
+                <input type="password" class="form-control" id="txtPassword" placeholder="Create password">
+                <br>
+                <button id="btnLogin" class="btn btn-action">Log in</button>
+                <button id="btnSignUp" class="btn btn-secondary">Sign up</button>
+                <button id="btnLogout" class="btn btn-action">Log out</button>
+            </div>
         </div>
         <div class="col-md-6 mommy-hide">
             <div id="mommy-quote">
@@ -74,7 +74,6 @@
             </div>
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="scripts.js"></script>
