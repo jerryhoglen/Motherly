@@ -13,6 +13,9 @@ $(function() {
     };
 
     firebase.initializeApp(config);
+    
+    // Get a reference to the database service
+    var database = firebase.database();
 
     // Get elements
     var txtEmail = $('#txtEmail');
@@ -21,7 +24,8 @@ $(function() {
     var btnSignUp = $('#btnSignUp');
     var btnLogout = $('#btnLogout');
 
-    btnLogin.on('click', function() {
+    // This is the user login in button function
+    btnLogin.on('click', function(event) {
         event.preventDefault();
         var email = txtEmail.val();
         var password = txtPassword.val();
@@ -36,13 +40,14 @@ $(function() {
         });
     });
 
+    // This is the user sign up button function
     btnSignUp.on('click', function() {
         event.preventDefault();
         var email = txtEmail.val();
         var password = txtPassword.val();
         var auth = firebase.auth();
 
-
+        // Creates new user with email and password
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -52,6 +57,7 @@ $(function() {
         });
     });
 
+    // Logs user out and hide navigation bar so they can move to user only pages
     btnLogout.on('click', function() {
         firebase.auth().signOut().then(function() {
             alert("You have been logged out!");
@@ -60,13 +66,52 @@ $(function() {
             // An error happened.
         });
     });
+
+
+/***************************************************
+                Ask Page
+****************************************************/
+ 
+ var addNewPost = database.ref('motherly-app');
+
+
+$('#post-btn').on('click', function(e){
+    e.preventDefault();
+    console.log('this button works');
+
+    var postQuestion = $('#post-question').val();
+
+    console.log("Values", postQuestion);
+
+    var newPost = addNewPost.push();
+    newPost.set({ name: postQuestion });
+});
+
 })
 
-function initMap() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************
+
+                  Google maps api
+
+****************************************************/
+/**function initMap() {
     var myLocation = { lat: 40.73978, lng: -73.98983 };
     console.log(myLocation);
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 15,
         center: myLocation,
     });
     var marker = new google.maps.Marker({
@@ -74,4 +119,10 @@ function initMap() {
         map: map
     });
     console.log("this works");
-}
+} **/
+
+
+
+
+
+
