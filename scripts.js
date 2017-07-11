@@ -13,7 +13,7 @@ $(function() {
     };
 
     firebase.initializeApp(config);
-    
+
     // Get a reference to the database service
     var database = firebase.database();
 
@@ -68,25 +68,41 @@ $(function() {
     });
 
 
-/***************************************************
-                Ask Page
-****************************************************/
- 
- var addNewPost = database.ref('motherly-app');
+    /***************************************************
+                    Ask Page
+    ****************************************************/
+
+    var addNewPost = database.ref('motherly-app');
 
 
-$('#post-btn').on('click', function(e){
-    e.preventDefault();
-    console.log('this button works');
+    $('#post-btn').on('click', function(e) {
+        e.preventDefault();
+        console.log('this button works');
 
-    var postQuestion = $('#post-question').val();
+        var postQuestion = $('#post-question').val();
 
-    console.log("Values", postQuestion);
+        console.log("Values", postQuestion);
 
-    var newPost = addNewPost.push();
-    newPost.set({ name: postQuestion });
-});
+        var newPost = addNewPost.push();
+        newPost.set({ name: postQuestion });
+    });
 
+    // This will load the new posts to the page
+
+    addNewPost.on('value', function(posts) {
+        $('#post-question').empty();
+
+        posts.forEach(function(post) {
+            var id = post.key;
+            var name = post.val().name;
+
+
+            var newElement = '<div class="panel panel-default">' +
+                '<div class="panel-heading">' + name + '</div>';
+            $('#new-posts').append(newElement);
+        });
+
+    });
 })
 
 
@@ -120,9 +136,3 @@ $('#post-btn').on('click', function(e){
     });
     console.log("this works");
 } **/
-
-
-
-
-
-

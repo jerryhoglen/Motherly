@@ -130,6 +130,10 @@ body p {
     height: 1000px;
 }
 
+#new-posts {
+    height: 20px;
+}
+
 .ask-heading {
     text-align: center;
     padding-top: 10%;
