@@ -79,12 +79,11 @@ $(function() {
         e.preventDefault();
         console.log('this button works');
 
+        var postHeadline = $('#post-headline').val();
         var postQuestion = $('#post-question').val();
 
-        console.log("Values", postQuestion);
-
         var newPost = addNewPost.push();
-        newPost.set({ name: postQuestion });
+        newPost.set({ headline: postHeadline, question: postQuestion });
     });
 
     // This will load the new posts to the page
@@ -94,14 +93,18 @@ $(function() {
 
         posts.forEach(function(post) {
             var id = post.key;
-            var name = post.val().name;
-
+            var headline = post.val().headline;
+            var question = post.val().question;
 
             var newElement = '<div class="panel panel-default">' +
-                '<div class="panel-heading">' + name + '</div>';
+                '<div class="panel-heading">' + '<h4>' + headline + '</h4>' + '<br>' + '<p>' + question + '</p>' + '</div>';
+            var newReply = '<button id="reply-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#reply-modal">Reply to question</button>' + '<hr>';
             $('#new-posts').append(newElement);
+            $('#new-posts').append(newReply);
         });
-
+    });
+    $('#reply-btn').on('click', function() {
+        console.log('works');
     });
 })
 
@@ -123,7 +126,7 @@ $(function() {
                   Google maps api
 
 ****************************************************/
-/**function initMap() {
+function initMap() {
     var myLocation = { lat: 40.73978, lng: -73.98983 };
     console.log(myLocation);
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -135,4 +138,4 @@ $(function() {
         map: map
     });
     console.log("this works");
-} **/
+}
