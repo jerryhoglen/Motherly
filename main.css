@@ -161,9 +161,8 @@ hr {
     background-color: #lightgrey;
 }
 
-.reply-btn {
-    margin-left: 5%;
-    margin-bottom: 2%;
+#reply-btn {
+    margin-bottom: 5%;
 }
 
 #new-reply {

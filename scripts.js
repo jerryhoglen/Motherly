@@ -86,35 +86,40 @@ $(function() {
         newPost.set({ headline: postHeadline, question: postQuestion });
     });
 
-    // This will load the new posts to the page
+    //This will load the new posts to the page
 
     addNewPost.on('value', function(posts) {
         $('#post-question').empty();
+        $('#new-posts').empty();
+        $('#new-reply').empty();
 
         posts.forEach(function(post) {
             var id = post.key;
             var headline = post.val().headline;
             var question = post.val().question;
 
+
             var newElement = '<div class="panel panel-default">' +
                 '<div class="panel-heading">' + '<h3 class="new-heading">' + headline + '</h3>' + '<br>' + '<p>' + question + '</p>' + '</div>';
             var newReply = '<button id="reply-btn" type="button" class="btn btn-default" data-toggle="modal" data-target="#reply-modal">Reply to question</button>';
+
             $('#new-posts').append(newElement);
             $('#new-posts').append(newReply);
         });
     });
 
+
+
     $('#save-btn').on('click', function(e) {
         e.preventDefault();
-        
 
+        var question = $('#question').val();
         var questionReply = $('#answer-question').val();
         var userReply = $('#username-reply').val();
         console.log(questionReply);
         var newElementTwo = '<div class="panel panel-default">' +
-            '<div class="panel-body">' + '<h3>' + 'User Reply' + '<hr>' + '</h3>' + '<h4>' + userReply + '</h4>' + '<p>' + questionReply + '</p>' + '</div>';
+            '<div class="panel-body">' + '<h3>' + 'User Reply' + '<hr>' + '</h3>' + '<h4>' + question + '</h4>' + '<h4>' + userReply + '</h4>' + '<p>' + questionReply + '</p>' + '</div>';
         $('#new-reply').append(newElementTwo);
-        $('#reply-btn').hide();
 
 
     });
