@@ -17,6 +17,7 @@ $(function() {
     // Get a reference to the database service
     var database = firebase.database();
 
+
     // Get elements
     var txtEmail = $('#txtEmail');
     var txtPassword = $('#txtPassword');
@@ -26,10 +27,12 @@ $(function() {
 
     // This is the user login in button function
     btnLogin.on('click', function(event) {
+        console.log('click');
         event.preventDefault();
         var email = txtEmail.val();
         var password = txtPassword.val();
         var auth = firebase.auth();
+
 
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
             // Handle Errors here.
@@ -100,7 +103,7 @@ $(function() {
 
 
             var newElement = '<div class="panel panel-default">' +
-                '<div class="panel-heading">' + '<h3 class="new-heading">' + headline + '</h3>' + '<br>' + '<p>' + question + '</p>' + '</div>';
+                '<div class="panel-heading">' + '<h3 class="new-heading">' + 'Headline: ' + headline + '</h3>' + '<br>' + '<p>' + 'Question: ' + question + '</p>' + '</div>';
             var newReply = '<button id="reply-btn" type="button" class="btn btn-default" data-toggle="modal" data-target="#reply-modal">Reply to question</button>';
 
             $('#new-posts').append(newElement);
@@ -118,8 +121,8 @@ $(function() {
         var userReply = $('#username-reply').val();
         console.log(questionReply);
         var newElementTwo = '<div class="panel panel-default">' +
-            '<div class="panel-body">' + '<h3>' + 'User Reply' + '<hr>' + '</h3>' + '<h4>' + question + '</h4>' + '<h4>' + userReply + '</h4>' + '<p>' + questionReply + '</p>' + '</div>';
-        $('#new-reply').append(newElementTwo);
+            '<div class="panel-body">' + '<h3>' + 'Question: ' + question + '</h3>' + '<hr>' + '<h4>' + 'User: ' + userReply + '</h4>' + '<p>' + 'Reply: ' + questionReply + '</p>' + '</div>';
+        $('#new-posts').append(newElementTwo);
 
 
     });
@@ -135,6 +138,7 @@ $(function() {
                   Google maps api
 
 ****************************************************/
+
 function initAutocomplete() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 40.712784, lng: -74.005941 },
@@ -142,7 +146,7 @@ function initAutocomplete() {
         mapTypeId: 'roadmap'
     });
 
-    // Create the search box and link it to the UI element.
+    // Create the search box 
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -161,12 +165,6 @@ function initAutocomplete() {
         if (places.length == 0) {
             return;
         }
-
-        /***   // Clear out the old markers.
-           markers.forEach(function(marker) {
-             marker.setMap(null);
-           });
-           markers = []; ****/
 
         // For each place, get the icon, name and location.
         var bounds = new google.maps.LatLngBounds();

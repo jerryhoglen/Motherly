@@ -15,6 +15,10 @@ body p {
     font-weight: 200;
 }
 
+.navbar {
+    background-color: #E2E2E2;
+}
+
 
 /*********************************************************
 
@@ -92,6 +96,7 @@ body p {
 
 #profile-page {
     height: 1000px;
+    background-color: #E2E2E2;
 }
 
 .profile-header {
@@ -126,6 +131,7 @@ body p {
 
 #ask-page {
     height: 1000px;
+    background-color: #F4AFAB;
 }
 
 #new-posts {
@@ -177,6 +183,11 @@ hr {
 
 
 *********************************************************/
+
+.map-page {
+    background-color: #9AC1CE;
+    height: 1000px;
+}
 
 .map-location {
     text-align: center;
